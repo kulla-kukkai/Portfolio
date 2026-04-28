@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kullavanee — Frontend Developer</title>
+
+  <!--
+  ═══════════════════════════════════════════════════
+  FONTS — โหลดจาก Google Fonts
+  - DM Serif Display → หัวข้อใหญ่, italic สวยงาม
+  - Garamond         → body text, อ่านง่าย
+  - Space Mono       → label, tag เล็กๆ monospace
+  ═══════════════════════════════════════════════════
+  -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=EB+Garamond:ital,wght@0,400;1,400&family=Space+Mono:ital@0;1&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- ── CSS หลักของทั้ง site (theme, nav, about, skills, projects, footer) ── -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<!--
+═══════════════════════════════════════════════════════
+NAV — fixed top navigation bar
+- nav-tagline: คำอธิบายสั้นๆ ซ้ายบน
+- nav-logo: ชื่อ/brand กลาง
+- nav-links: ลิงก์ smooth scroll ไป section ต่างๆ
+Style อยู่ใน style.css → nav {}
+═══════════════════════════════════════════════════════
+-->
+<nav>
+  <span class="nav-tagline">Junior Frontend Developer · Student · Nackademin · Sweden</span>
+  <span class="nav-logo">Kullavanee ✿</span>
+  <ul class="nav-links">
+    <li><a href="#landing">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+
+<!-- ═══════════════════════════════════════════════════════
+    SECTION: LANDING
+    ใช้ CSS Grid 3 คอลัมน์ — ไอคอนอยู่ขอบซ้าย/ขวา
+    hero text อยู่กลาง ไม่ทับกัน
+    ▶ ปรับขนาดไอคอน → แก้ width="XXX" ในแต่ละ <img>
+    ▶ ปรับ CSS Grid → แก้ .landing-grid ใน <style>
+════════════════════════════════════════════════════════ -->
+<section id="landing">
+  <div class="landing-grid">
+
+    <!-- ── มุมซ้ายบน: เมฆ → Skills ── -->
+    <div class="si-top-left">
+      <div class="scene-icon"
+          onclick="document.getElementById('skills').scrollIntoView({behavior:'smooth'})">
+        <img src="icon/cloud.PNG" width="300" alt="cloud — Skills"/>
+        <span class="scene-label">Skills</span>
+        <div class="skill-pills">
+          <span class="skill-pill">HTML</span>
+          <span class="skill-pill">CSS</span>
+          <span class="skill-pill">JS</span>
+          <span class="skill-pill">UX/UI</span>
+          <span class="skill-pill">Figma</span>
+          <span class="skill-pill">GitHub</span>
+          <span class="skill-pill">Agile</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── กลาง: hero text ── -->
+    <div class="hero-block">
+      
+      <div class="scene-icon" style="margin-top: 120px;"
+          onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+        <img src="icon/girl.PNG" width="325" alt="girl — About me"/>
+        <span class="scene-label">About me</span>
+      </div>
+
+
+      <span class="hero-eyebrow">— A junior frontend developer · sweden</span>
+      <h1>Hi, I'm <em>Kullavanee</em>.<br>I design and build <br><u>clean, user-friendly</u><br>interfaces. ✿</h1>
+      <span class="hero-welcome">
+        Former pharmaceutical manufacturing inspector in Thailand,<br>
+        now crafting digital experiences in Sweden —<br>
+        same attention to detail, just a little more playful.
+      </span>
+      <a href="#projects" class="hero-cta">Explore my work</a>
+    </div>
+
+    <!-- ── มุมขวาบน: พระอาทิตย์ → CV ── -->
+    <div class="si-top-right">
+      <div class="scene-icon" onclick="window.open('Kullavanee-CV-SE.pdf','_blank')">
+        <img src="icon/sun.PNG" width="250" alt="sun — CV"/>
+        <span class="scene-label">CV ↓</span>
+        <a class="cv-tip" href="Kullavanee-CV-SE.pdf" download>Download CV</a>
+      </div>
+    </div>
+
+    <!-- ── กลางขวา: ว่าง ── -->
+    <div class="si-mid-right"></div>
+
+    <!-- ── มุมซ้ายล่าง: ดอกไม้ → Projects ── -->
+    <div class="si-bot-left">
+      <div class="scene-icon"
+          onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">
+        <img src="icon/flower.PNG" width="280" alt="flowers — Projects"/>
+        <span class="scene-label">Projects</span>
+      </div>
+    </div>
+
+    <!-- ── มุมขวาล่าง: บ้าน → Contact ── -->
+    <div class="si-bot-right">
+      <div class="scene-icon"
+          onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+        <img src="icon/house.PNG" width="350" alt="house — Contact"/>
+        <span class="scene-label">Contact</span>
+      </div>
+    </div>
+
+  </div><!-- /landing-grid -->
+
+  <div class="landing-footer-text">
+    It's <span id="clock">00:00</span> in Sweden &nbsp;·&nbsp;
+    <span id="sky-status">the sky is calm.</span>
+  </div>
+  <div class="scroll-hint">Scroll to explore</div>
+
+</section><!-- /landing -->
+
+<!-- ═══════════════════════════════════════════════════════
+    SECTION: ABOUT
+    ซ้าย = text | ขวา = card รูป pixel avatar
+    Style อยู่ใน style.css → #about {}
+════════════════════════════════════════════════════════ -->
+<section id="about">
+  <div class="about-text observe-fade">
+    <p class="about-eyebrow">— who am I</p>
+    <h2 class="about-title">From lab coats<br>to <em>laptops.</em></h2>
+    <!-- ▶ แก้ bio ตรงนี้ -->
+    <p class="about-body">
+      I’m Kullavanee, a junior frontend developer based in Sweden.
+      I spent years as a quality inspector in pharmaceutical manufacturing in Thailand, 
+      where precision, documentation, and process thinking were non-negotiable.
+      Now I'm channeling all of that into frontend development.
+    </p>
+    <p class="about-body">
+      I care about clarity, usability, and getting the small details right. <br>
+      The user empathy I built in quality control travels with me. <br>
+      Working across Thai, English, and Swedish has shaped 
+      how I think about communication and usability.
+    </p>
+    <p class="about-body" style="font-style:italic;font-size:22px;opacity:0.5">
+      Currently looking for internship opportunities in Sweden · open to work ✿
+    </p>
+    <!-- ▶ เพิ่ม/ลบ tag ตรงนี้ -->
+    <div class="about-tags">
+      <span class="tag">HTML</span>
+      <span class="tag">CSS</span>
+      <span class="tag">JavaScript</span>
+      <span class="tag">Figma</span>
+      <span class="tag">UX/UI</span>
+      <span class="tag">GitHub</span>
+      <span class="tag">Agile</span>
+      <span class="tag">Trello</span>
+    </div>
+  </div>
+
+  <!-- card รูป pixel avatar -->
+  <div class="about-illustration observe-fade" style="transition-delay:0.2s">
+    <div class="about-card">
+      <!-- ▶ เปลี่ยนรูปโดยเปลี่ยน src เป็น path รูปใหม่ -->
+      <img src="icon/BCO.b0189b6c-28e4-4931-bbbf-c957f2453edb.png"  width="230" alt="Kullavanee">
+      <div class="about-card-name">Kullavanee</div>
+      <div class="about-card-role">Frontend Developer · Sweden</div>
+      <svg class="about-card-dots" viewBox="0 0 64 64">
+        <circle cx="16" cy="16" r="7" fill="#f5b8cb" opacity="0.5"/>
+        <circle cx="32" cy="16" r="7" fill="#a8d4e6" opacity="0.5"/>
+        <circle cx="48" cy="16" r="7" fill="#f5b8cb" opacity="0.5"/>
+        <circle cx="32" cy="32" r="7" fill="#f5b8cb" opacity="0.4"/>
+        <circle cx="48" cy="48" r="7" fill="#a8d4e6" opacity="0.5"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════
+    SECTION: SKILLS
+    Grid 3 คอลัมน์ ของ skill-cell
+    Style อยู่ใน style.css → #skills, .skills-grid, .skill-cell
+════════════════════════════════════════════════════════ -->
+<section id="skills">
+  <div class="skills-header observe-fade">
+    <h2 class="section-title">My <em>Skill</em><br>garden.</h2>
+    <p class="section-sub">Tools I've picked up along the way</p>
+  </div>
+  <div class="skills-grid">
+
+    <!-- ▶ เพิ่ม skill ใหม่: copy block .skill-cell แล้วแก้ชื่อ + desc -->
+
+    <div class="skill-cell observe-fade">
+      <img class="skill-cell-icon" src="icon/html.svg" alt="HTML"/>
+      <img class="skill-cell-icon" src="icon/css10.svg" alt="CSS"/>
+      <img class="skill-cell-icon" src="icon/sass-1.svg" alt="SCSS"/>
+      <img class="skill-cell-icon" src="icon/bootstrap-5-1.svg" alt="Bootstrap"/>
+      <div class="skill-cell-name">HTML &amp; CSS</div>
+      <div class="skill-cell-desc">Semantic structure, responsive layouts with Flexbox and Grid, custom animations.</div>
+      <span class="skill-cell-level">Comfortable 🌸</span>
+    </div>
+
+    <div class="skill-cell observe-fade" style="transition-delay:0.1s">
+      <!-- icons หลัก + coming soon -->
+      <div style="display:flex; gap:8px; align-items:center; margin-bottom:4px; flex-wrap:wrap;">
+        <img class="skill-cell-icon" src="icon/javascript-r.svg" alt="Javascript" style="margin-bottom:0"/>
+        <!-- ▶ ใส่ logo react/ts/tailwind ได้เลยเมื่อเริ่มเรียน -->
+      </div>
+
+      <div class="skill-cell-name">JavaScript</div>
+      <div class="skill-cell-desc">
+        Vanilla JS — DOM, ES6+, OOP with classes, async/await, API fetching.
+        <span style="display:block; margin-top:8px; opacity:0.5; font-style:italic; font-size:18px;">
+          📚 Learning this summer: React · TypeScript · Tailwind
+        </span>
+      </div>
+      <span class="skill-cell-level">Growing 🌱</span>
+    </div>
+
+    <div class="skill-cell observe-fade" style="transition-delay:0.2s">
+      <img class="skill-cell-icon" src="icon/figma-icon.svg" alt="Figma"/>
+      <div class="skill-cell-name">Figma</div>
+      <div class="skill-cell-desc">UI design, wireframing, prototyping and component systems before writing code.</div>
+      <span class="skill-cell-level">Growing 🌱</span>
+    </div>
+
+    <div class="skill-cell observe-fade" style="transition-delay:0.1s">
+      <img class="skill-cell-icon" src="icon/github-icon-2.svg" alt="GitHub"/>
+      <div class="skill-cell-name">GitHub</div>
+      <div class="skill-cell-desc">Version control, branching, pull requests, and collaborative workflows.</div>
+      <span class="skill-cell-level">Comfortable 🌸</span>
+    </div>
+
+    <div class="skill-cell observe-fade" style="transition-delay:0.2s">
+      <svg class="skill-cell-icon" viewBox="0 0 56 56" fill="none">
+        <rect x="6" y="10" width="44" height="36" rx="4" stroke="#2b2320" stroke-width="1.8"/>
+        <rect x="12" y="16" width="12" height="10" rx="2" fill="#f5b8cb" opacity="0.6"/>
+        <rect x="28" y="16" width="12" height="6" rx="2" fill="#a8d4e6" opacity="0.6"/>
+        <rect x="12" y="30" width="8" height="8" rx="2" fill="#a8d4e6" opacity="0.6"/>
+        <rect x="24" y="26" width="16" height="12" rx="2" fill="#f5b8cb" opacity="0.4"/>
+      </svg>
+      <div class="skill-cell-name">Agile</div>
+      <div class="skill-cell-desc">Sprint planning, Kanban boards, iterative delivery from both industry and tech.</div>
+      <span class="skill-cell-level">Comfortable 🌸</span>
+    </div>
+
+    <div class="skill-cell observe-fade" style="transition-delay:0.3s">
+      <svg class="skill-cell-icon" viewBox="0 0 56 56" fill="none">
+        <circle cx="28" cy="28" r="20" fill="none" stroke="#2b2320" stroke-width="1.8"/>
+        <path d="M28 8 L28 48" stroke="#2b2320" stroke-width="1.2"/>
+        <path d="M8 28 Q28 16 48 28" fill="none" stroke="#f5b8cb" stroke-width="1.5"/>
+        <path d="M8 28 Q28 40 48 28" fill="none" stroke="#a8d4e6" stroke-width="1.5"/>
+        <circle cx="28" cy="28" r="4" fill="#e07a9a"/>
+      </svg>
+      <div class="skill-cell-name">Quality Mindset</div>
+      <div class="skill-cell-desc">5+ years pharmaceutical QC — edge case thinking and documentation that transfers directly.</div>
+      <span class="skill-cell-level">Expert ★</span>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════
+    SECTION: PROJECTS — Carousel
+    ▶ เพิ่ม project: copy .project-card ทั้งก้อน
+    ▶ เปลี่ยน screenshot: ใส่ <img> แทน placeholder div
+    ▶ เปลี่ยน href demo/github เป็น URL จริง
+════════════════════════════════════════════════════════ -->
+<section id="projects">
+  <div class="projects-header observe-fade">
+    <h2 class="section-title">My <em>Project</em><br>garden.</h2>
+    <p class="section-sub" style="text-align:center; max-width:100%;">
+      Real projects — grown from scratch
+    </p>
+  </div>
+
+  <div class="carousel-wrapper observe-fade">
+    <div class="carousel-track" id="carouselTrack">
+
+      <!-- ── CARD 01 ── -->
+      <!-- ▶ ใส่ screenshot: เปลี่ยน div placeholder เป็น
+          <img class="project-card-img" src="screenshots/pokemon.png" alt="Pokémonchi"/> -->
+      <div class="project-card">
+        <video
+          class="project-card-img"
+          src="demo/pokemonchi.mp4"
+          autoplay
+          loop
+          muted
+          playsinline>
+        </video>
+        <div class="project-card-body">
+          <span class="project-card-num">01</span>
+          <div class="project-card-name">Pokémonchi</div>
+          <p class="project-card-desc">
+            Browser-based Tamagotchi — adopt up to 4 Pokémon,
+            stats decay every 10 seconds. OOP, async/await, external API.
+          </p>
+          <div class="project-card-tags">
+            <span class="project-card-tag">JavaScript</span>
+            <span class="project-card-tag">CSS Grid</span>
+            <span class="project-card-tag">OOP</span>
+            <span class="project-card-tag">API</span>
+          </div>
+          <div class="project-card-links">
+            <!-- ▶ เปลี่ยน href เป็น live demo URL -->
+            <a href="https://kulla-kukkai.github.io/Pokemonchi-JS2/" target="_blank" class="project-card-btn demo">Live demo</a>
+            <a href="https://github.com/kulla-kukkai/Pokemonchi-JS2"
+               target="_blank" class="project-card-btn github">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── CARD 02 ── -->
+      <div class="project-card">
+        <video
+          class="project-card-img"
+          src="demo/sole-search.mp4"
+          autoplay
+          loop
+          muted
+          playsinline>
+        </video>
+        <div class="project-card-body">
+          <span class="project-card-num">02</span>
+          <div class="project-card-name">Sole_Search</div>
+          <p class="project-card-desc">
+            A collaborative webshop project built alongside a backend team, simulating a real e-commerce environment.
+I contributed to login and registration features, as well as the admin dashboard, and was responsible for the UI design in Figma and responsive implementation.
+          </p>
+          <div class="project-card-tags">
+            <span class="project-card-tag">JavaScript</span>
+            <span class="project-card-tag">CSS</span>
+            <span class="project-card-tag">HTML</span>
+            <span class="project-card-tag">SSE</span>
+            <span class="project-card-tag">API</span>
+            <span class="project-card-tag">Figma</span>
+            <span class="project-card-tag">Agile</span>
+            <span class="project-card-tag">Kanban</span>
+          </div>
+          <div class="project-card-links">
+            <a href="https://bassamr14.github.io/webbshop-2026-fe/" target="_blank" class="project-card-btn demo">Live demo</a>
+            <a href="https://github.com/kulla-kukkai/sole-search-webbshop-2026-fe"
+               target="_blank" class="project-card-btn github">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- ── CARD 03 ── -->
+      <div class="project-card">
+        <video
+          class="project-card-img"
+          src="demo/quiz.mp4"
+          autoplay
+          loop
+          muted
+          playsinline>
+        </video>
+        <div class="project-card-body">
+          <span class="project-card-num">03</span>
+          <div class="project-card-name">Quiz</div>
+          <p class="project-card-desc">
+            A Christmas-themed quiz application that challenges users with festive questions in a fun and interactive way.
+          </p>
+          <div class="project-card-tags">
+            <span class="project-card-tag">HTML</span>
+            <span class="project-card-tag">JavaScript</span>
+            <span class="project-card-tag">CSS</span>
+            <span class="project-card-tag">OOP</span>
+          </div>
+          <div class="project-card-links">
+            <!-- ▶ เปลี่ยน href เป็น live demo URL -->
+            <a href="https://kulla-kukkai.github.io/JS-projektet/" target="_blank" class="project-card-btn demo">Live demo</a>
+            <a href="https://github.com/kulla-kukkai/JS-projektet/"
+               target="_blank" class="project-card-btn github">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── CARD 03 — placeholder ── -->
+      <!-- ▶ copy card นี้เพื่อเพิ่ม project ใหม่ -->
+      <div class="project-card">
+        <div class="project-card-img-placeholder">🌱</div>
+        <div class="project-card-body">
+          <span class="project-card-num">04</span>
+          <div class="project-card-name">More in the garden</div>
+          <p class="project-card-desc">
+            Currently building new things. Each project is a new patch.
+          </p>
+          <div class="project-card-tags">
+            <span class="project-card-tag">In progress</span>
+          </div>
+          <div class="project-card-links">
+            <a href="https://github.com/kulla-kukkai"
+               target="_blank" class="project-card-btn github"
+               style="flex:unset; width:100%;">GitHub ↗</a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /carousel-track -->
+
+    <!-- ปุ่ม prev / next -->
+    <div class="carousel-controls">
+      <button class="carousel-btn" id="prevBtn">←</button>
+      <button class="carousel-btn" id="nextBtn">→</button>
+    </div>
+
+    <!-- dots -->
+    <div class="carousel-dots" id="carouselDots"></div>
+
+  </div><!-- /carousel-wrapper -->
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════
+    SECTION: CONTACT
+    ใช้ FormSubmit.co — ส่ง form แล้ว forward email ฟรี
+    ไม่ต้องมี backend เอง
+
+    ▶ วิธีใช้ FormSubmit:
+      1. เปลี่ยน action="https://formsubmit.co/kuk.kullavanee@gmail.COM"
+      2. ครั้งแรกที่มีคนส่ง FormSubmit จะส่ง confirmation mail ให้ confirm
+      3. หลังจากนั้น form จะ forward email มาให้เลย
+
+    ▶ hidden fields ที่ใช้:
+      _subject  = หัวข้อ email
+      _next     = redirect หลัง submit (เปลี่ยนเป็น URL ของ thank-you page)
+      _captcha  = false ปิด captcha (เปิดได้ถ้าอยากป้องกัน spam)
+════════════════════════════════════════════════════════ -->
+<section id="contact">
+  <!-- decorative doodles พื้นหลัง -->
+  <svg class="contact-doodle" style="top:8%;left:4%;width:110px" viewBox="0 0 110 110">
+    <path d="M55 8 Q90 55 55 102 Q20 55 55 8Z" fill="#f5b8cb"/>
+  </svg>
+  <svg class="contact-doodle" style="bottom:8%;right:4%;width:90px;transform:rotate(40deg)" viewBox="0 0 90 90">
+    <circle cx="45" cy="45" r="36" fill="none" stroke="#5faacf" stroke-width="1.5" stroke-dasharray="5 10"/>
+  </svg>
+
+  <p class="contact-eyebrow observe-fade">— let's grow something together</p>
+  <h2 class="contact-title observe-fade">Say<br><em>hello.</em></h2>
+  <p class="contact-sub observe-fade">Open to internships and junior positions in Sweden</p>
+
+  <!--
+  CONTACT FORM
+  ▶ เปลี่ยน action เป็น: https://formsubmit.co/kuk.kullavanee@gmail.com
+  -->
+  <form class="contact-form observe-fade"
+        action="https://formsubmit.co/kuk.kullavanee@gmail.com"
+        method="POST">
+
+    <!-- hidden fields ควบคุม FormSubmit -->
+    <input type="hidden" name="_subject" value="New message from portfolio ✿"/>
+    <input type="hidden" name="_next" value="https://yoursite.com/thanks"/>
+    <input type="hidden" name="_captcha" value="false"/>
+
+    <!-- ชื่อ + อีเมล อยู่บรรทัดเดียวกัน -->
+    <div class="form-row">
+      <input type="text"  name="name"  placeholder="Your name"  required/>
+      <input type="email" name="email" placeholder="Your email" required/>
+    </div>
+
+    <!-- หัวเรื่อง -->
+    <input type="text" name="subject" placeholder="Subject (e.g. Internship opportunity)"/>
+
+    <!-- ข้อความ -->
+    <textarea name="message" rows="5"
+              placeholder="Hi Kullavanee, I'd love to chat about…"
+              required></textarea>
+
+    <!-- ปุ่ม Send -->
+    <button type="submit" class="btn-send">Send message ✿</button>
+
+  </form>
+
+  <!-- social links ใต้ form -->
+  <div class="contact-socials observe-fade">
+    <!-- ▶ เปลี่ยน href เป็นลิงก์จริง -->
+    <a href="https://github.com/kulla-kukkai" target="_blank" rel="noopener noreferrer">
+    <i class="fa-brands fa-github"></i> GitHub</a>
+    <a href="https://linkedin.com/in/kullavanee-phanthapongtam" target="_blank" rel="noopener noreferrer">
+    <i class="fa-brands fa-linkedin"></i> LinkedIn </a>
+    <a href="mailto:kuk.kullavanee@gmail.com">
+    <i class="fa-solid fa-envelope"></i> kuk.kullavanee@gmail.com</a>
+  </div>
+
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════
+    FOOTER
+════════════════════════════════════════════════════════ -->
+<footer>
+  <span class="footer-logo">kullavanee ✿</span>
+  <span class="footer-copy">&copy; 2025 Kullavanee · </span>
+  <div class="footer-socials">
+    <a href="https://github.com/kulla-kukkai" target="_blank" rel="noopener">GitHub</a>
+    <a href="linkedin.com/in/kullavanee-phanthapongtam" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a href="mailto:kuk.kullavanee@gmail.com">Email</a>
+  </div>
+</footer>
+<!-- ── ปุ่มกลับขึ้นบน ── -->
+<button id="backToTop" onclick="document.getElementById('landing').scrollIntoView({behavior:'smooth'})">
+  <span class="back-top-flower">✿</span>
+  <span class="back-top-arrow">↑</span>
+</button>
+<script src="index.js" defer></script>
+</body>
+</html>
