@@ -971,66 +971,198 @@ footer {
   opacity: 1; transform: translateY(0);
 }
 
-/* ── Responsive ───────────────────────────────────────────────────────────── */
+/* ── Responsive ───────────────────────────────────── */
+
+/* ── Tablet (900px) ── */
 @media (max-width: 900px) {
-  nav { padding: 20px 24px; }
-  .nav-links { display: none; }
 
-  section { padding: 100px 24px 60px; }
+  /* Nav */
+  nav {
+    padding: 16px 24px;
+  }
+  .nav-tagline { display: none; }
+  .nav-links {
+    gap: 16px;
+  }
+  .nav-links a { font-size: 11px; }
+  .nav-logo { font-size: 24px; }
 
+  /* Sections */
+  section {
+    padding: 100px 48px 60px;
+  }
+
+  /* Landing */
   #landing {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
-    text-align: center;
-    padding-top: 80px;
+    padding: 80px 16px 40px;
   }
-
-  .landing-sidebar-left,
-  .landing-sidebar-right {
-    flex-direction: row;
-    justify-content: center;
-    padding-top: 20px;
+  .landing-grid {
+    grid-template-columns: 140px 1fr 140px;
+    gap: 16px;
+    min-height: 70vh;
   }
+  .hero-block h1 {
+    font-size: clamp(26px, 4vw, 40px);
+  }
+  .hero-welcome {
+    font-size: 16px;
+  }
+  .scene-icon img { width: 120px !important; }
 
+  /* About */
   #about {
     grid-template-columns: 1fr;
     gap: 40px;
+    padding: 100px 48px 60px;
   }
+  .about-card { width: 100%; max-width: 380px; }
 
+  /* Skills */
   .skills-grid { grid-template-columns: 1fr 1fr; }
 
-  .project-row {
-    grid-template-columns: 40px 1fr;
-    grid-template-rows: auto auto;
+  /* Projects */
+  #projects { padding: 100px 48px 60px; }
+  .project-card {
+    min-width: 320px;
+    max-width: 320px;
+  }
+
+  /* Contact */
+  .contact-form { width: 100%; }
+
+  /* Footer */
+  footer {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+    padding: 32px 24px;
+  }
+}
+
+/* ── Mobile (600px) ── */
+@media (max-width: 600px) {
+
+    /* ลดขนาด font ทั้งหน้าบน mobile */
+  :root {
+    font-size: 75%; /* ▶ ปรับตัวเลขนี้ — 75% = เล็กลง 25% จากปกติ */
+  }
+
+  /* Nav */
+  nav {
+    padding: 14px 20px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .nav-tagline { display: none; }
+  .nav-logo { font-size: 20px; }
+  .nav-links {
+    display: flex;
     gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    padding-top: 8px;
+    border-top: 1px solid rgba(224,122,154,0.15);
+  }
+  .nav-links a { font-size: 9px; letter-spacing: 0.1em; }
+
+  /* Sections — padding넓게 */
+  section { padding: 100px 28px 60px; }
+
+  /* Landing */
+  #landing { padding: 90px 20px 40px; }
+
+  .landing-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 16px;
+    min-height: unset;
   }
 
-  .project-tags, .project-year { display: none; }
-  footer { flex-direction: column; gap: 16px; text-align: center; }
-}
+  /* ซ่อนไอคอนทั้งหมดบน mobile */
+  .si-top-left,
+  .si-top-right,
+  .si-mid-left,
+  .si-mid-right,
+  .si-bot-left,
+  .si-bot-right { display: none; }
 
-@media (max-width: 580px) {
+  /* hero อยู่กลาง เต็มความกว้าง */
+  .hero-block {
+    grid-column: 1;
+    grid-row: 1;
+    padding: 20px 0;
+    pointer-events: all;
+  }
+
+  .hero-block h1 {
+    font-size: clamp(32px, 8vw, 48px);
+    margin-bottom: 12px;
+  }
+  .hero-welcome { font-size: 16px; }
+  .hero-eyebrow { font-size: 10px; }
+
+  /* ซ่อน girl icon ใน hero-block ด้วย */
+  .hero-block .scene-icon { display: none; }
+
+  /* scroll hint และ footer text */
+  .scroll-hint { display: none; }
+  .landing-footer-text {
+    font-size: 11px;
+    white-space: normal;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  /* About */
+  #about {
+    grid-template-columns: 1fr;
+    padding: 100px 28px 60px;
+    gap: 32px;
+  }
+  .about-title { font-size: 36px; }
+  .about-body  { font-size: 17px; max-width: 100%; }
+  .about-card  { width: 100%; padding: 32px 24px; }
+
+  /* Skills */
+  #skills { padding: 100px 28px 60px; }
   .skills-grid { grid-template-columns: 1fr; }
-  .landing-hero { font-size: 28px; }
+  .skill-cell  { padding: 28px 20px; }
+
+  /* Projects */
+  #projects { padding: 100px 20px 60px; }
+  .project-card {
+    min-width: calc(100vw - 40px);
+    max-width: calc(100vw - 40px);
+  }
+  .carousel-btn { width: 40px; height: 40px; font-size: 14px; }
+
+  /* Contact */
+  #contact { padding: 100px 28px 60px; }
+  .contact-form { width: 100%; }
+  .contact-form .form-row { grid-template-columns: 1fr; }
+  .contact-title { font-size: clamp(40px, 10vw, 70px); }
+
+  /* Footer */
+  footer { padding: 24px 20px; flex-direction: column; gap: 16px; text-align: center; }
+  .footer-copy { display: none; }
 }
 
-  /* ── Pixel avatar ─────────────────────────────────────────────────────────── */
-  .pixel-avatar {
-    image-rendering: pixelated;
-    image-rendering: crisp-edges;
-    width: 180px;
-    height: auto;
-    border-radius: 16px;
-    display: block;
-    margin: 0 auto 20px;
-  }
+/* ── Back to Top — ลอยเหนือทุกอย่าง ── */
+#backToTop {
+  z-index: 99999 !important;  /* เหนือทุก element */
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+}
 
-  /* ── Project desc text ────────────────────────────────────────────────────── */
-  .project-desc {
-    font-family: 'Garamond', serif;
-    font-size: px;
-    opacity: 0.38;
-    margin-top: 6px;
-    line-height: 1.6;
-    max-width: 460px;
+@media (max-width: 600px) {
+  #backToTop {
+    width: 48px;
+    height: 48px;
+    bottom: 16px;
+    right: 16px;
   }
+  .back-top-flower { font-size: 24px; }
+  .back-top-arrow  { font-size: 12px; }
+}
