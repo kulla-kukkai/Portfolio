@@ -267,6 +267,32 @@ section {
   font-size: 13px; color: var(--ink);
 }
 
+.cv-hover-preview {
+  position: absolute;
+  left: 50%;
+  top: calc(100% + 16px);
+  transform: translateX(-50%) translateY(10px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 10;
+}
+
+.scene-icon:hover .cv-hover-preview {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.cv-hover-preview img {
+  width: 210px;
+  height: auto;
+  border: 2px solid var(--pink-deep);
+  border-radius: 16px;
+  background: white;
+  box-shadow: 0 12px 28px rgba(43,35,32,0.15);
+  display: block;
+}
+
 .cv-tip {
   background: var(--cream); border: 1.5px solid var(--pink-deep);
   border-radius: 999px; padding: 4px 18px;
@@ -988,6 +1014,9 @@ footer {
 
 /* ── Tablet (900px) ── */
 @media (max-width: 900px) {
+  .cv-hover-preview {
+    display: none !important;
+  }
 
   /* Nav */
   nav {
