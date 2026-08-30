@@ -34,6 +34,15 @@
   style.textContent = `
     * { cursor: none !important; }
 
+    @media (max-width: 900px) {
+      * { cursor: auto !important; }
+      #flower-cursor,
+      #cursor-ring,
+      .petal-trail {
+        display: none !important;
+      }
+    }
+
     #flower-cursor {
       position: fixed;
       top: 0; left: 0;

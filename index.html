@@ -33,6 +33,7 @@ Style อยู่ใน style.css → nav {}
   <ul class="nav-links">
     <li><a href="#landing">Home</a></li>
     <li><a href="#about">About</a></li>
+    <li><a href="CV%20kullavanee%20FEND%20(2).pdf" target="_blank" rel="noopener noreferrer">CV</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -85,15 +86,18 @@ Style อยู่ใน style.css → nav {}
         now crafting digital experiences in Sweden —<br>
         same attention to detail, just a little more playful.
       </span>
-      <a href="#projects" class="hero-cta">Explore my work</a>
+      <div class="hero-actions">
+        <a href="#projects" class="hero-cta">Explore my projects</a>
+        <a href="CV%20kullavanee%20FEND%20(2).pdf" class="hero-cta secondary" download="Kullavanee-CV.pdf">Download my CV</a>
+      </div>
     </div>
 
     <!-- ── มุมขวาบน: พระอาทิตย์ → CV ── -->
     <div class="si-top-right">
-      <div class="scene-icon" onclick="window.open('Kullavanee-CV-SE.pdf','_blank')">
+      <div class="scene-icon" onclick="window.open('CV%20kullavanee%20FEND%20(2).pdf', '_blank')">
         <img src="icon/sun.PNG" width="250" alt="sun — CV"/>
         <span class="scene-label">CV ↓</span>
-        <a class="cv-tip" href="CV kullavanee FEND (2).pdf" download>Download CV</a>
+        <a class="cv-tip" href="CV%20kullavanee%20FEND%20(2).pdf" download="Kullavanee-CV.pdf">Download CV</a>
       </div>
     </div>
 
@@ -156,8 +160,9 @@ Style อยู่ใน style.css → nav {}
     <!-- ▶ เพิ่ม/ลบ tag ตรงนี้ -->
     <div class="about-tags">
       <span class="tag">HTML</span>
-      <span class="tag">CSS</span>
-      <span class="tag">JavaScript</span>
+      <span class="tag">CSS/SCSS</span>
+      <span class="tag">React.js</span>
+      <span class="tag">Vanilla JavaScript</span>
       <span class="tag">Figma</span>
       <span class="tag">UX/UI</span>
       <span class="tag">GitHub</span>
@@ -213,14 +218,15 @@ Style อยู่ใน style.css → nav {}
       <!-- icons หลัก + coming soon -->
       <div style="display:flex; gap:8px; align-items:center; margin-bottom:4px; flex-wrap:wrap;">
         <img class="skill-cell-icon" src="icon/javascript-r.svg" alt="Javascript" style="margin-bottom:0"/>
-        <!-- ▶ ใส่ logo react/ts/tailwind ได้เลยเมื่อเริ่มเรียน -->
+        <img class="skill-cell-icon" src="icon/react-svgrepo-com.svg" alt="React.js" style="margin-bottom:0"/>
       </div>
 
       <div class="skill-cell-name">JavaScript</div>
+
       <div class="skill-cell-desc">
-        Vanilla JS — DOM, ES6+, OOP with classes, async/await, API fetching.
+        Vanilla JS — DOM, ES6+, OOP with classes, async/await, API fetching.<br>
+        React.js — component-based UI, props, state, and reusable interfaces.
         <span style="display:block; margin-top:8px; opacity:0.5; font-style:italic; font-size:18px;">
-          📚 Learning this summer: React · TypeScript · Tailwind
         </span>
       </div>
       <span class="skill-cell-level">Growing 🌱</span>

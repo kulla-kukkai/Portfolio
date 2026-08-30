@@ -179,9 +179,9 @@ section {
 
 .hero-block h1 {
   font-family: 'DM Serif Display', serif;
-  font-size: clamp(35px, 3vw, 48px);
-  line-height: 1.18; font-weight: 400;
-  color: var(--ink); margin-bottom: 16px;
+  font-size: clamp(44px, 4vw, 64px);
+  line-height: 1.12; font-weight: 400;
+  color: var(--ink); margin-bottom: 18px;
   opacity: 0;
   animation: fadeUp 1s 0.3s forwards;
 }
@@ -191,18 +191,26 @@ section {
 .hero-welcome {
   font-family: 'EB Garamond', serif;
   font-style: italic;
-  font-size: clamp(22px, 1.3vw, 17px);
-  color: var(--ink); line-height: 1.8;
-  margin-bottom: 24px; display: block;
+  font-size: clamp(24px, 1.65vw, 22px);
+  color: var(--ink); line-height: 1.85;
+  margin-bottom: 26px; display: block;
   opacity: 0;
   animation: fadeUp 1s 0.55s forwards;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 24px;
 }
 
 .hero-cta {
   display: inline-block;
   border: 1.5px solid var(--pink-deep);
-  border-radius: 999px; padding: 11px 32px;
-  font-family: 'EB Garamond', serif; font-size: 22px;
+  border-radius: 999px; padding: 12px 34px;
+  font-family: 'EB Garamond', serif; font-size: 24px;
   text-decoration: none; color: var(--pink-deep);
   letter-spacing: 0.05em;
   transition: background 0.3s, color 0.3s, transform 0.2s;
@@ -210,6 +218,11 @@ section {
   opacity: 0;
   animation: fadeUp 1s 0.8s forwards;
 }
+
+.hero-cta.secondary {
+  background: rgba(255,255,255,0.4);
+}
+
 .hero-cta:hover { background: var(--pink-deep); color: white; transform: translateY(-2px); }
 
 .scene-icon {
@@ -231,8 +244,8 @@ section {
 .scene-label {
   font-family: 'DM Serif Display', serif;
   font-style: italic; font-size: 20px; color: var(--ink);
-  opacity: 0; transition: opacity 0.25s, transform 0.25s;
-  transform: translateY(6px); white-space: nowrap;
+  opacity: 1; transition: opacity 0.25s, transform 0.25s;
+  transform: translateY(0); white-space: nowrap;
   background: rgba(253,246,238,0.94);
   padding: 3px 14px; border-radius: 999px;
   border: 1px solid var(--pink);
@@ -1001,6 +1014,9 @@ footer {
     gap: 16px;
     min-height: 70vh;
   }
+  .hero-block {
+    padding: 0 12px;
+  }
   .hero-block h1 {
     font-size: clamp(26px, 4vw, 40px);
   }
@@ -1008,6 +1024,10 @@ footer {
     font-size: 16px;
   }
   .scene-icon img { width: 120px !important; }
+  .scene-label {
+    font-size: 16px;
+    padding: 3px 10px;
+  }
 
   /* About */
   #about {
